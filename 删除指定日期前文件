@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# this filer for rsync to remote server upload
+
+
+/usr/bin/rsync -a /home/afd/upload /home/afd/jingtum/backup/venus_auth_bak/
+# delete remote host upload 20 days
+for host in jc_otc host1 host2 host3 host4
+do
+ssh afd@${host} "find /home/afd/upload/  -type f -mtime +20 |xargs rm -f"
+done
+# delete locale upload file pre 30 days
+find /home/afd/upload/ -type f -mtime +30 |xargs rm -f 
