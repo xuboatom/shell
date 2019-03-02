@@ -1,0 +1,4 @@
+学习货币对添加，在写入redis数据和拉取账本的服务器上，在家目录/cron目录中有auto_pull_ledgre.sh and auto_write_redis.sh 两个脚本中添加货币对，
+例如scp-cny .
+注意：在非井通的衍生货币中，需要在缩写前叫j，例如csp如果是非井通货币那么添加就是jcsp。 jcsp-cny
+然后重启两个脚本产生的进程。
